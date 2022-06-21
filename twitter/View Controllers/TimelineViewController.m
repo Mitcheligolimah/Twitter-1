@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong)NSArray *tweetsArray;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation TimelineViewController
@@ -27,7 +29,15 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     
+    
+    [self fetchTweets];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchTweets)forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+}
     // Get timeline
+    - (void)fetchTweets{
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             self.tweetsArray = tweets;
@@ -41,7 +51,9 @@
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
-}
+    }
+
+
 - (IBAction)didTapLogout:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 
@@ -68,10 +80,9 @@
   TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath: indexPath];
   
     Tweet *thisTweet = self.tweetsArray[indexPath.row];
-    cell.tweetName.text= thisTweet.user.name;
+    cell.tweetName.text = thisTweet.user.name;
     cell.tweetText.text = thisTweet.text;
 //    cell.tweetImage = thisTweet.profilePicture;
-    self.tableView.rowHeight = 150;
    
     
     NSString *URLString = thisTweet.user.profilePicture;
