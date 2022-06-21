@@ -10,24 +10,33 @@
 #import "APIManager.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "TweetCell.h"
+#import "Tweet.h"
+#import "UIImageView+AFNetworking.h"
 
-@interface TimelineViewController ()
+@interface TimelineViewController ()  <UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic, strong)NSArray *tweetsArray;
 @end
 
 @implementation TimelineViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
     
     // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
+            self.tweetsArray = tweets;
             NSLog(@"😎😎😎 Successfully loaded home timeline");
-            for (NSDictionary *dictionary in tweets) {
-                NSString *text = dictionary[@"text"];
+            for (Tweet *dictionary in tweets) {
+                NSString *text = dictionary.text;
                 NSLog(@"%@", text);
             }
+            [self.tableView reloadData];
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
@@ -39,14 +48,44 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     appDelegate.window.rootViewController = loginViewController;
-    [[APIManager shared] logout];
+  
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[APIManager shared] logout];
+    
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.tweetsArray.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath: indexPath];
+  
+    Tweet *thisTweet = self.tweetsArray[indexPath.row];
+    cell.tweetName.text= thisTweet.user.name;
+    cell.tweetText.text = thisTweet.text;
+//    cell.tweetImage = thisTweet.profilePicture;
+    self.tableView.rowHeight = 150;
+   
+    
+    NSString *URLString = thisTweet.user.profilePicture;
+    NSURL *url = [NSURL URLWithString:URLString];
+    
+    cell.tweetImage.layer.cornerRadius = cell.tweetImage.frame.size.height / 2;
+    cell.tweetImage.layer.masksToBounds = YES;
+    cell.tweetImage.layer.borderWidth = 0;
+    [cell.tweetImage setImageWithURL: url];
+    
+    return cell;
+
+}
+  
 /*
 #pragma mark - Navigation
 
@@ -59,3 +98,6 @@
 
 
 @end
+    
+
+    
