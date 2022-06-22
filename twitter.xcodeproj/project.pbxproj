@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54C6F70E2861147C002D2AE8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C6F70D2861147C002D2AE8 /* Keys.plist */; };
 		54C6F71128612792002D2AE8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F71028612792002D2AE8 /* User.m */; };
 		54C6F714286129D0002D2AE8 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F713286129D0002D2AE8 /* Tweet.m */; };
 		54C6F71D286228E2002D2AE8 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F71C286228E2002D2AE8 /* TweetCell.m */; };
 		54C6F720286286BC002D2AE8 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6F71F286286BC002D2AE8 /* ComposeViewController.m */; };
+		54C6F72228637944002D2AE8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C6F72128637944002D2AE8 /* Keys.plist */; };
 		557D7B17F5D2B5715B705AA9 /* libPods-twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D6142D6F34C1AE98EE4951 /* libPods-twitter.a */; };
 		6AD278DA20BC4B950085BC29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD278D920BC4B950085BC29 /* AppDelegate.m */; };
 		6AD278E020BC4B950085BC29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD278DE20BC4B950085BC29 /* Main.storyboard */; };
@@ -27,7 +27,6 @@
 /* Begin PBXFileReference section */
 		1397EA94AE1DE5F26C1724FD /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
 		43D6142D6F34C1AE98EE4951 /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		54C6F70D2861147C002D2AE8 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		54C6F70F28612792002D2AE8 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		54C6F71028612792002D2AE8 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		54C6F712286129D0002D2AE8 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		54C6F71C286228E2002D2AE8 /* TweetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		54C6F71E286286BC002D2AE8 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		54C6F71F286286BC002D2AE8 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		54C6F72128637944002D2AE8 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		6AD278D520BC4B950085BC29 /* twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD278D820BC4B950085BC29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6AD278D920BC4B950085BC29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				6AD278E320BC4B970085BC29 /* LaunchScreen.storyboard */,
 				6AD278E620BC4B970085BC29 /* Info.plist */,
 				6AD278E720BC4B970085BC29 /* main.m */,
-				54C6F70D2861147C002D2AE8 /* Keys.plist */,
+				54C6F72128637944002D2AE8 /* Keys.plist */,
 			);
 			path = twitter;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C6F70E2861147C002D2AE8 /* Keys.plist in Resources */,
+				54C6F72228637944002D2AE8 /* Keys.plist in Resources */,
 				6AD278E520BC4B970085BC29 /* LaunchScreen.storyboard in Resources */,
 				6AD278E220BC4B970085BC29 /* Assets.xcassets in Resources */,
 				6AD278E020BC4B950085BC29 /* Main.storyboard in Resources */,
