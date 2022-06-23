@@ -10,8 +10,10 @@
 #import "User.h"
 
 @implementation Tweet
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     NSDictionary *user = dictionary[@"user"];
+    
     
     self.user = [[User alloc] initWithDictionary:user];
     self = [super init];
