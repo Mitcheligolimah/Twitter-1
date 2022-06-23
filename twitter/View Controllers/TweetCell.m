@@ -56,9 +56,10 @@
     }
 }
 
+
 - (IBAction)didTapRetweet:(id)sender {
     if (self.tweet.retweeted) {
-        self.tweet.retweeted= NO;
+        self.tweet.retweeted = NO;
         self.tweet.retweetCount -= 1;
         
         UIImage *UnretweetImage = [UIImage imageNamed:@"retweet-icon"];
@@ -83,7 +84,9 @@
         
         UIImage *retweetImage = [UIImage imageNamed:@"retweet-icon-green"];
         [self.retweetButton setImage:retweetImage forState:UIControlStateNormal];
-        [self.retweetButton setTitle:@"1" forState:UIControlStateNormal];
+    
+        NSString *retweetCount = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
+        [self.retweetButton setTitle:retweetCount forState:UIControlStateNormal];
         
         [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
             if(error) {

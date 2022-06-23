@@ -104,8 +104,8 @@
     NSString *favoriteCount = [NSString stringWithFormat:@"%d", thisTweet.favoriteCount];
     [cell.favoriteButton setTitle:favoriteCount forState:UIControlStateNormal];
     
-    NSString *retweetCount = [NSString stringWithFormat:@"%d", thisTweet.retweetCount ];
-    [cell.retweetButton setTitle:favoriteCount forState:UIControlStateNormal];
+    NSString *retweetCount = [NSString stringWithFormat:@"%d", thisTweet.retweetCount];
+    [cell.retweetButton setTitle:retweetCount forState:UIControlStateNormal];
     return cell;
 
 }
