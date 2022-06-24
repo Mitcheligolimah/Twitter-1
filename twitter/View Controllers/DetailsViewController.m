@@ -53,7 +53,7 @@
     
         UIImage *favoriteImage = [UIImage imageNamed:@"favor-icon-red"];
         [self.favoriteButton setImage:favoriteImage forState:UIControlStateNormal];
-        // number (like count)
+        
         NSString *favoriteCount = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
         [self.favoriteButton setTitle:favoriteCount forState:UIControlStateNormal];
         
