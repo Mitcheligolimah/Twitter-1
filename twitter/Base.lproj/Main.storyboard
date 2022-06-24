@@ -92,14 +92,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-1w-H3K">
-                                                    <rect key="frame" x="121" y="49" width="234" height="18"/>
+                                                    <rect key="frame" x="121" y="48.5" width="234" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H66-qa-Y7v">
-                                                    <rect key="frame" x="121" y="20" width="41.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="121" y="20" width="44.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -113,6 +113,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="retweet-icon" title=""/>
                                                     <connections>
+                                                        <action selector="didTapRetweet:" destination="Lpz-WX-SLk" eventType="touchUpInside" id="UUQ-62-EyC"/>
                                                         <action selector="didTapRetweet:" destination="zzX-rG-oWa" eventType="touchUpInside" id="b4I-09-OW1"/>
                                                     </connections>
                                                 </button>
@@ -121,8 +122,8 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="favor-icon" title=""/>
                                                     <connections>
-                                                        <action selector="didTapFavorite:" destination="Lpz-WX-SLk" eventType="touchUpInside" id="CVb-Zn-GVU"/>
                                                         <action selector="didTapFavorite:" destination="zzX-rG-oWa" eventType="touchUpInside" id="OJP-Z8-KWx"/>
+                                                        <action selector="didTapFavorite:" destination="Lpz-WX-SLk" eventType="touchUpInside" id="ox0-dv-kxc"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-7k-leH">
@@ -130,9 +131,15 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="message-icon" title=""/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jix-6E-tMi">
-                                                    <rect key="frame" x="172.5" y="20" width="37.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jix-6E-tMi">
+                                                    <rect key="frame" x="175.5" y="20" width="37.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0y-Er-SPI">
+                                                    <rect key="frame" x="223" y="20" width="32.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -147,23 +154,26 @@
                                                 <constraint firstItem="H66-qa-Y7v" firstAttribute="leading" secondItem="Xzb-1w-H3K" secondAttribute="leading" id="ERk-5m-lH9"/>
                                                 <constraint firstItem="1w8-7k-leH" firstAttribute="leading" secondItem="zYg-Xc-6t2" secondAttribute="trailing" constant="-1" id="JSH-bg-iYM"/>
                                                 <constraint firstItem="jix-6E-tMi" firstAttribute="top" secondItem="8H4-Nq-cdi" secondAttribute="topMargin" constant="9" id="LGQ-pq-BA9"/>
+                                                <constraint firstItem="l0y-Er-SPI" firstAttribute="top" secondItem="jix-6E-tMi" secondAttribute="top" id="QPb-jT-PYz"/>
                                                 <constraint firstItem="H66-qa-Y7v" firstAttribute="top" secondItem="hA3-dd-kRa" secondAttribute="top" id="YPH-3t-Odf"/>
                                                 <constraint firstItem="hA3-dd-kRa" firstAttribute="top" secondItem="8H4-Nq-cdi" secondAttribute="top" constant="20" id="bQC-on-mfN"/>
                                                 <constraint firstItem="SsG-rY-G9S" firstAttribute="centerY" secondItem="zYg-Xc-6t2" secondAttribute="centerY" id="bxa-m9-ukZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Xzb-1w-H3K" secondAttribute="trailing" constant="20" id="dYO-Nb-rIa"/>
+                                                <constraint firstItem="l0y-Er-SPI" firstAttribute="leading" secondItem="jix-6E-tMi" secondAttribute="trailing" constant="10" id="iCI-gn-5A3"/>
                                                 <constraint firstItem="zYg-Xc-6t2" firstAttribute="leading" secondItem="SsG-rY-G9S" secondAttribute="trailing" id="isG-dq-FFT"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H66-qa-Y7v" secondAttribute="trailing" constant="20" id="lck-mG-OCv"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="jix-6E-tMi" secondAttribute="trailing" constant="10" id="nD7-EZ-ys2"/>
                                                 <constraint firstItem="jix-6E-tMi" firstAttribute="leading" secondItem="H66-qa-Y7v" secondAttribute="trailing" constant="10" id="pVQ-sU-f2h"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hA3-dd-kRa" secondAttribute="bottom" constant="20" id="qux-d2-G2W"/>
                                                 <constraint firstItem="hA3-dd-kRa" firstAttribute="leading" secondItem="8H4-Nq-cdi" secondAttribute="leading" constant="20" id="ub7-La-u0R"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vnx-pN-MBJ" secondAttribute="bottom" constant="20" id="veF-b9-cBv"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l0y-Er-SPI" secondAttribute="trailing" constant="44" id="xT9-Is-c8D"/>
                                                 <constraint firstItem="H66-qa-Y7v" firstAttribute="leading" secondItem="hA3-dd-kRa" secondAttribute="trailing" constant="41" id="xzK-Ca-ety"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="UnfavoriteButton" destination="zYg-Xc-6t2" id="frF-O2-UVa"/>
                                             <outlet property="UnretweetButton" destination="SsG-rY-G9S" id="XYk-gl-Fkx"/>
+                                            <outlet property="dateLabel" destination="l0y-Er-SPI" id="02E-R7-3y2"/>
                                             <outlet property="favoriteButton" destination="zYg-Xc-6t2" id="rOO-UM-bDK"/>
                                             <outlet property="retweetButton" destination="SsG-rY-G9S" id="tFc-6R-HFu"/>
                                             <outlet property="tweetImage" destination="hA3-dd-kRa" id="lfj-60-D27"/>
@@ -241,8 +251,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iUW-Wh-jlD">
-                                                <rect key="frame" x="131" y="60" width="41.5" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="131" y="60" width="44.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -250,11 +260,17 @@
                                                 <rect key="frame" x="182" y="115" width="54" height="44"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="retweet-icon" title=""/>
+                                                <connections>
+                                                    <action selector="didTapRetweet:" destination="gnx-54-wza" eventType="touchUpInside" id="7h0-pk-Iy9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl3-so-X7q">
                                                 <rect key="frame" x="236" y="115" width="54" height="44"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="favor-icon" title=""/>
+                                                <connections>
+                                                    <action selector="didTapFavorite:" destination="gnx-54-wza" eventType="touchUpInside" id="kEj-Pt-oYl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufJ-md-RBD">
                                                 <rect key="frame" x="289" y="115" width="54" height="44"/>
@@ -262,7 +278,7 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="message-icon" title=""/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-D8-Le1">
-                                                <rect key="frame" x="182.5" y="60" width="37.5" height="18"/>
+                                                <rect key="frame" x="185.5" y="60" width="37.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -272,6 +288,12 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="reply-icon" title=""/>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHz-pa-dKb">
+                                                <rect key="frame" x="233" y="60" width="33" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -282,14 +304,17 @@
                                             <constraint firstItem="iUW-Wh-jlD" firstAttribute="leading" secondItem="1vo-nb-uQu" secondAttribute="leading" id="9YO-vS-kYg"/>
                                             <constraint firstAttribute="trailing" secondItem="1vo-nb-uQu" secondAttribute="trailing" constant="20" id="CR8-mf-feC"/>
                                             <constraint firstItem="0iZ-5k-mb4" firstAttribute="centerY" secondItem="dl3-so-X7q" secondAttribute="centerY" id="G9v-eY-dNe"/>
+                                            <constraint firstItem="KHz-pa-dKb" firstAttribute="leading" secondItem="kfj-D8-Le1" secondAttribute="trailing" constant="10" id="I2E-lw-cRA"/>
                                             <constraint firstAttribute="trailing" secondItem="ufJ-md-RBD" secondAttribute="trailing" constant="32" id="IQI-Sx-Kqi"/>
                                             <constraint firstItem="dl3-so-X7q" firstAttribute="leading" secondItem="0iZ-5k-mb4" secondAttribute="trailing" id="Lcy-x5-4ZA"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KHz-pa-dKb" secondAttribute="trailing" constant="44" id="LvG-1p-EYm"/>
                                             <constraint firstItem="Il6-I3-NLr" firstAttribute="leading" secondItem="301-S6-9Ua" secondAttribute="leading" constant="30" id="Pbm-V3-UjI"/>
                                             <constraint firstItem="0iZ-5k-mb4" firstAttribute="leading" secondItem="qAK-E3-a3q" secondAttribute="trailing" constant="-6" id="Thg-lU-luh"/>
                                             <constraint firstItem="dl3-so-X7q" firstAttribute="centerY" secondItem="ufJ-md-RBD" secondAttribute="centerY" id="VPb-D1-vgm"/>
                                             <constraint firstItem="ufJ-md-RBD" firstAttribute="leading" secondItem="dl3-so-X7q" secondAttribute="trailing" constant="-1" id="Yjm-c4-Rf1"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kfj-D8-Le1" secondAttribute="trailing" constant="20" id="a0t-9m-bUo"/>
                                             <constraint firstItem="1vo-nb-uQu" firstAttribute="top" secondItem="iUW-Wh-jlD" secondAttribute="bottom" constant="8" id="c9u-cC-dfP"/>
+                                            <constraint firstItem="KHz-pa-dKb" firstAttribute="top" secondItem="kfj-D8-Le1" secondAttribute="top" id="dha-ej-KTh"/>
                                             <constraint firstItem="kfj-D8-Le1" firstAttribute="leading" secondItem="iUW-Wh-jlD" secondAttribute="trailing" constant="10" id="dwb-sd-oT0"/>
                                             <constraint firstItem="iUW-Wh-jlD" firstAttribute="top" secondItem="Il6-I3-NLr" secondAttribute="top" id="sQv-j6-Kf8"/>
                                             <constraint firstAttribute="bottom" secondItem="qAK-E3-a3q" secondAttribute="bottom" constant="20" id="yGK-SE-cyW"/>
@@ -319,6 +344,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="mhF-xB-7Af"/>
                     <connections>
+                        <outlet property="UnfavoriteButton" destination="dl3-so-X7q" id="aOB-RO-TNw"/>
+                        <outlet property="UnretweetButton" destination="0iZ-5k-mb4" id="1db-XI-EgU"/>
+                        <outlet property="dateLabel" destination="KHz-pa-dKb" id="bfi-0k-ffM"/>
+                        <outlet property="favoriteButton" destination="dl3-so-X7q" id="LKd-zz-Zgb"/>
+                        <outlet property="retweetButton" destination="0iZ-5k-mb4" id="rd4-se-2AY"/>
                         <outlet property="tweetImage" destination="Il6-I3-NLr" id="lRh-Ix-py9"/>
                         <outlet property="tweetName" destination="iUW-Wh-jlD" id="OLk-YZ-jD4"/>
                         <outlet property="tweetText" destination="1vo-nb-uQu" id="g5D-MM-x3M"/>

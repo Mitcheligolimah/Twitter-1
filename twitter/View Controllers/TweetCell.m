@@ -11,18 +11,15 @@
 
 @implementation TweetCell
 - (IBAction)didTapFavorite:(id)sender {
-    // It's already favorited, so we want to unfavorite
     if (self.tweet.favorited) {
         self.tweet.favorited = NO;
         self.tweet.favoriteCount -= 1;
         
         UIImage *UnfavoriteImage = [UIImage imageNamed:@"favor-icon"];
         [self.UnfavoriteButton setImage:UnfavoriteImage forState:UIControlStateNormal];
-        // number (like count)
         NSString *favoriteCount = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
         [self.favoriteButton setTitle:favoriteCount forState:UIControlStateNormal];
         
-        // API call
         [[APIManager shared] Unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
             if(error) {
                  NSLog(@"Error Unfavoriting tweet: %@", error.localizedDescription);
@@ -32,19 +29,16 @@
             }
         }];
     } else {
-        // Data model
         self.tweet.favorited = YES;
         self.tweet.favoriteCount += 1;
-        
-        // Update our UI
-        // button
+    
         UIImage *favoriteImage = [UIImage imageNamed:@"favor-icon-red"];
         [self.favoriteButton setImage:favoriteImage forState:UIControlStateNormal];
-        // number (like count)
+        
         NSString *favoriteCount = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
         [self.favoriteButton setTitle:favoriteCount forState:UIControlStateNormal];
         
-        // API call
+    
         [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
             if(error) {
                  NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
@@ -64,11 +58,11 @@
         
         UIImage *UnretweetImage = [UIImage imageNamed:@"retweet-icon"];
         [self.UnretweetButton setImage:UnretweetImage forState:UIControlStateNormal];
-        // number (like count)
+        
         NSString *retweetCount = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
         [self.UnretweetButton setTitle:retweetCount forState:UIControlStateNormal];
         
-        // API call
+      
         [[APIManager shared] Unretweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
             if(error) {
                  NSLog(@"Error Unretweeting tweet: %@", error.localizedDescription);
@@ -101,15 +95,10 @@
 }
         
 
-//- (void)awakeFromNib {
-    //[super awakeFromNib];
-    // Initialization code
-//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *tweetName;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *tweetText;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 @property (weak, nonatomic) IBOutlet UIButton *UnfavoriteButton;

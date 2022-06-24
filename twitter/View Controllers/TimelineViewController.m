@@ -43,7 +43,7 @@
     
     [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
-    // Get timeline
+    
     - (void)fetchTweets{
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
@@ -75,7 +75,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
     [[APIManager shared] logout];
     
 }
@@ -93,6 +93,7 @@
     cell.tweetName.text = thisTweet.user.name;
     cell.tweetText.text = thisTweet.text;
     cell.userName.text = [NSString stringWithFormat:@"@%@",thisTweet.user.screenName];
+    cell.dateLabel.text = thisTweet.createdAtString;
     
     NSString *URLString = thisTweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
