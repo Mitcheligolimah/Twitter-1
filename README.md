@@ -1,8 +1,8 @@
-# Project 2 - *Name of App Here*
+# Project 2 - Twitter 
 
-**Name of your app** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+Twitter is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent:  35 hours spent in total
 
 ## User Stories
 
@@ -47,7 +47,7 @@ Work more on the stretch features
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Auto Layout
-2. Stack view
+2. Stack view and adding hyperlinks.
 
 ## Video Walkthrough
 
